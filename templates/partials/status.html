@@ -1,0 +1,1 @@
+<span class="badge status-{{ item.status }}">{{ item.get_status_display }}</span>{% if item.overdue %}<span class="badge status-danger">Quá hạn</span>{% endif %}{% if item.issue_open %}<span class="badge status-danger">Có vấn đề</span>{% endif %}

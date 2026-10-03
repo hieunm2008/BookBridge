@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block bodyclass %}app-page{% endblock %}
+{% block shell %}
+<button class="menu-backdrop" data-menu-close tabindex="-1" aria-hidden="true"></button>
+<aside class="sidebar" id="sidebar" aria-label="Menu ứng dụng">
+  <div class="sidebar-brand"><a class="brand" href="{% url 'dashboard' %}"><span class="brand-mark" aria-hidden="true">B</span>BookBridge</a><button class="icon-button sidebar-close" type="button" data-menu-close aria-label="Đóng menu">{% include 'partials/icon.html' with name='x' %}</button></div>
+  <div class="workspace-label">ĐIỂM TRƯỜNG KẾT NỐI</div>
+  <nav aria-label="Điều hướng ứng dụng">
+    <a href="{% url 'dashboard' %}" {% if area == 'dashboard' %}class="active" aria-current="page"{% endif %}>{% include 'partials/icon.html' with name='layout-dashboard' %}<span>Tổng quan</span></a>
+    <a href="{% url 'inventory_list' %}" {% if area == 'inventory' %}class="active" aria-current="page"{% endif %}>{% include 'partials/icon.html' with name='books' %}<span>Kho sách</span></a>
+    <a href="{% url 'need_list' %}" {% if area == 'requests' %}class="active" aria-current="page"{% endif %}>{% include 'partials/icon.html' with name='clipboard-list' %}<span>Nhu cầu</span></a>
+    <a href="{% url 'loan_list' %}" {% if area == 'loans' %}class="active" aria-current="page"{% endif %}>{% include 'partials/icon.html' with name='file-description' %}<span>Phiếu mượn</span></a>
+    {% if is_coordinator %}<a href="{% url 'coordination' %}" {% if area == 'coordination' %}class="active" aria-current="page"{% endif %}>{% include 'partials/icon.html' with name='arrows-exchange' %}<span>Điều phối</span></a>{% endif %}
+    {% if user.is_superuser %}<a href="{% url 'admin:index' %}">{% include 'partials/icon.html' with name='settings' %}<span>Quản trị danh mục</span></a>{% endif %}
+  </nav>
+  <div class="sidebar-note"><span class="sidebar-note-icon">{% include 'partials/icon.html' with name='book-2' %}</span><p>Chia sẻ nguồn sách đang có để việc học không phải chờ.</p><a class="text-link" href="{% url 'home' %}">Về BookBridge {% include 'partials/icon.html' with name='arrow-up-right' %}</a></div>
+</aside>
+<div class="app-shell">
+  <header class="topbar">
+    <div class="topbar-school"><button class="menu-toggle icon-button" type="button" data-menu-toggle aria-controls="sidebar" aria-expanded="false" aria-label="Mở menu">{% include 'partials/icon.html' with name='menu-2' %}</button><span class="scope-icon">{% include 'partials/icon.html' with name='building-community' %}</span><span>{% if is_coordinator %}Toàn bộ điểm trường{% else %}{{ current_school.name|default:'Chưa được gán trường' }}{% endif %}</span></div>
+    <div class="user-menu">{% include 'partials/theme_toggle.html' %}<span class="user-avatar" aria-hidden="true">{{ user.get_full_name|default:user.username|first|upper }}</span><div class="user-identity"><strong>{{ user.get_full_name|default:user.username }}</strong><small>{{ role_label }}</small></div><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="icon-button" aria-label="Đăng xuất" title="Đăng xuất">{% include 'partials/icon.html' with name='logout' %}</button></form></div>
+  </header>
+  <main id="main" class="app-content">
+    {% include 'partials/messages.html' %}
+    {% block app_content %}{% endblock %}
+  </main>
+  <footer class="app-footer">BookBridge · Kết nối các điểm trường</footer>
+</div>
+{% endblock %}

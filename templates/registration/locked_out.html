@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Tạm giới hạn đăng nhập · BookBridge{% endblock %}
+{% block content %}
+<section class="error-page public-container">
+  <p class="error-code">429</p>
+  <h1>Đăng nhập tạm thời bị giới hạn</h1>
+  <p role="alert">Tên đăng nhập này đã có {{ failure_limit }} lần đăng nhập sai liên tiếp. Vui lòng thử lại sau khoảng {{ retry_minutes }} phút, lúc <strong>{{ retry_at|date:'H:i:s' }}</strong> (giờ Việt Nam).</p>
+  <p>Thử lại trong thời gian chờ không kéo dài thời gian khóa. Nếu cần đăng nhập sớm hơn, liên hệ quản trị viên để mở khóa.</p>
+  <div class="button-row"><a class="button" href="{{ login_url }}">Quay lại đăng nhập</a><a class="button secondary" href="{% url 'home' %}">Về trang chính</a>{% if user.is_authenticated %}{% include 'partials/logout.html' %}{% endif %}</div>
+</section>
+{% endblock %}

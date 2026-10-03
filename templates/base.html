@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BookBridge kết nối và điều phối sách giáo khoa giữa các điểm trường.">
+  <title>{% block title %}BookBridge{% endblock %}</title>
+  <link rel="icon" type="image/svg+xml" href="{% static 'favicon.svg' %}">
+  <script src="{% static 'theme.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'bridge.css' %}">
+  <link rel="stylesheet" href="{% static 'ui.css' %}">
+  <script src="{% static 'bridge.js' %}" defer></script>
+</head>
+<body class="{% block bodyclass %}public-page{% endblock %}">
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  {% block shell %}
+  <header class="public-header"><a class="brand" href="{% url 'home' %}"><span class="brand-mark" aria-hidden="true">B</span>BookBridge</a>
+    <nav aria-label="Điều hướng chính"><a href="{% url 'home' %}#about">Giới thiệu</a><a href="{% url 'home' %}#process">Quy trình</a>{% include 'partials/theme_toggle.html' %}
+    {% if user.is_authenticated %}<a class="button small public-app-link" href="{% url 'dashboard' %}" aria-label="Vào hệ thống" title="Vào hệ thống">{% include 'partials/icon.html' with name='layout-dashboard' %}<span class="public-app-label">Vào hệ thống</span></a>{% include 'partials/logout.html' with compact=True %}{% else %}<a class="button small" href="{% url 'login' %}">Đăng nhập</a>{% endif %}</nav>
+  </header>
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer class="public-footer"><a class="brand" href="{% url 'home' %}">BookBridge</a><p>Kết nối các điểm trường, tiếp nối việc học.</p><p>{% if support_email %}Hỗ trợ: <a href="mailto:{{ support_email }}">{{ support_email }}</a>{% else %}Cần tài khoản? Liên hệ người quản trị BookBridge tại đơn vị của bạn.{% endif %}</p></footer>
+  {% endblock %}
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title"><form method="dialog"><h2 id="confirm-title">Xác nhận thao tác</h2><p id="confirm-message"></p><div class="button-row"><button class="button secondary" value="cancel">Quay lại</button><button class="button" id="confirm-accept" value="accept">Xác nhận</button></div></form></dialog>
+</body>
+</html>

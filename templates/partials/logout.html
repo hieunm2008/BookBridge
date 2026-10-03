@@ -1,0 +1,7 @@
+<form method="post" action="{% url 'logout' %}">
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{% url 'login' %}">
+  <button type="submit" class="{% if compact %}icon-button{% else %}button secondary{% endif %}" aria-label="Đăng xuất" title="Đăng xuất">
+    {% include 'partials/icon.html' with name='logout' %}{% if not compact %}Đăng xuất{% endif %}
+  </button>
+</form>

@@ -1,0 +1,31 @@
+.venv/
+__pycache__/
+*.py[cod]
+# Local databases, backups, logs and verification artifacts can contain user data.
+*.sqlite3*
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.bak
+*.backup
+*.dump
+*.log
+artifacts/
+media/
+# Only the documented environment template belongs in the repository.
+.env
+.env.*
+!.env.example
+# Private keys and credential exports.
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+credentials*.json
+secrets*.json
+staticfiles/

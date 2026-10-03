@@ -1,0 +1,24 @@
+Trong quá trình triển khai chủ trương thống nhất và điều chỉnh hệ thống sách giáo khoa, có thể phát sinh tình trạng nguồn cung sách chưa đáp ứng kịp nhu cầu tại một số địa phương và cơ sở giáo dục. Điều này khiến một bộ phận học sinh chưa có đầy đủ tài liệu học tập trong những tuần đầu của năm học, đồng thời gây khó khăn cho phụ huynh trong việc bảo đảm quá trình học tập của con em không bị gián đoạn.
+
+Một giải pháp tạm thời mà nhiều phụ huynh có thể nghĩ đến là sao chụp hoặc photocopy sách giáo khoa để học sinh sử dụng trong thời gian chờ sách chính thức. Tuy nhiên, việc sao chép và phát hành tài liệu có bản quyền nếu không được sự cho phép của chủ sở hữu quyền tác giả có thể phát sinh các vấn đề pháp lý liên quan đến quyền sở hữu trí tuệ.
+
+Trong bối cảnh đó, bạn được giao nhiệm vụ đề xuất một giải pháp thông minh, hợp pháp và có khả năng triển khai trong thực tế nhằm giúp học sinh tiếp tục học tập bình thường trong thời gian nguồn sách chính thức chưa được cung ứng đầy đủ.
+
+Giải pháp đề xuất cần cân nhắc đồng thời các yếu tố như:
+
+- Bảo đảm học sinh có thể tiếp cận nội dung học tập cần thiết mà không làm gián đoạn chương trình.
+- Tuân thủ các quy định liên quan đến bản quyền và quyền sở hữu trí tuệ.
+- Hạn chế tối đa chi phí phát sinh cho học sinh và phụ huynh.
+- Có khả năng triển khai nhanh tại trường học hoặc trên quy mô rộng hơn.
+- Tận dụng hợp lý các giải pháp công nghệ, tài nguyên số, hệ thống thư viện hoặc cơ chế chia sẻ tài liệu.
+- Chỉ đóng vai trò như một giải pháp chuyển tiếp trong thời gian chờ nguồn sách giáo khoa chính thức được cung ứng đầy đủ.
+
+Yêu cầu
+
+Hãy đề xuất một giải pháp sáng tạo, hợp pháp và có khả năng áp dụng thực tế nhằm hỗ trợ học sinh duy trì việc học trong thời gian chưa được cung ứng đầy đủ sách giáo khoa.
+
+Không giới hạn cách tiếp cận hoặc hình thức thể hiện. Giải pháp có thể sử dụng công nghệ hoặc hoàn toàn không sử dụng công nghệ, miễn là khả thi, chi phí hợp lý và tuân thủ quy định về bản quyền, quyền sở hữu trí tuệ.
+
+Bài làm có thể được trình bày dưới dạng tài liệu, sơ đồ, mô hình, video, prototype, website, ứng dụng, mã nguồn hoặc hình thức phù hợp khác. Việc sử dụng AI hay công nghệ không phải là yêu cầu bắt buộc và không được mặc nhiên đánh giá cao hơn giải pháp phi công nghệ.
+
+Nếu có mã nguồn hoặc sản phẩm cần chạy thử, khuyến khích đăng lên GitHub và cung cấp đường dẫn. Với các bài làm dạng tài liệu, hình ảnh, video hoặc minh chứng khác, có thể đăng lên Google Drive hoặc nền tảng tương đương và chia sẻ quyền xem cho bất kỳ ai có đường dẫn.
